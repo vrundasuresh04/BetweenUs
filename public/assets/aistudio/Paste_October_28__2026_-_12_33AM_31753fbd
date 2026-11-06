@@ -1,0 +1,1222 @@
+# MASTER DEVELOPMENT PROMPT — BETWEENUS
+
+## BUILD A COMPLETE INTELLIGENT TWO-PARTNER COMMUNICATION PLATFORM
+
+You are an expert full-stack software engineer, UI/UX designer, database architect, Big Data engineer, machine learning engineer, and software quality engineer.
+
+Build a complete, functional web application from scratch.
+
+**Application name: BetweenUs**
+
+**Subtitle: An Intelligent Communication and Relationship Analytics Platform**
+
+The application is being developed as a five-member MCA Artificial Intelligence and Machine Learning project for Big Data Analytics.
+
+The website must look and function like a genuine modern consumer communication product, not an academic presentation, project report, relationship quiz, or static analytics dashboard.
+
+The application must support two real authenticated users who can connect, communicate, receive optional communication feedback, reflect on their conversations, and understand differences in perspectives.
+
+The existing project concept must be preserved even though the application name is changing.
+
+The underlying project involves a 1 GB synthetic relationship-interaction dataset, SQL database, APIs, Hadoop MapReduce, machine learning, and Perspective Gap Score calculations.
+
+**IMPORTANT: Build actual executable functionality. Do not merely create attractive screens that simulate backend behavior.**
+
+---
+
+# 1. WHAT THE APPLICATION DOES
+
+BetweenUs is a private messaging and communication-understanding platform designed for two connected partners.
+
+Its central idea is:
+
+**Two people can interpret the same conversation differently. BetweenUs helps them communicate, recognize possible misunderstandings, and reflect on their different perspectives.**
+
+Unlike an ordinary messenger, it supports optional private communication feedback.
+
+Unlike a conventional couples application, it combines communication analysis, independent reflections, perspective-gap measurement, predictive modeling, and a Big Data Analytics pipeline.
+
+The application must not claim that it can determine a person's real intentions, diagnose relationship problems, or accurately judge whether someone is a good partner.
+
+---
+
+# 2. ESSENTIAL USER EXPERIENCE
+
+The application should follow this sequence:
+
+1. User A creates an account.
+2. User B creates a separate account.
+3. User A invites User B using a unique invitation code or secure link.
+4. User B accepts the invitation.
+5. Both accounts become linked.
+6. Both users enter a shared private chat.
+7. User A types a message.
+8. User B receives the exact message.
+9. User B types a response.
+10. User A receives the response.
+11. They continue messaging naturally.
+12. The system can optionally highlight potentially misunderstood wording.
+13. Each person can view private communication feedback.
+14. Both partners can voluntarily reflect on an interaction.
+15. The application calculates differences between their independent ratings.
+16. Historical analytics become available when there is sufficient valid data.
+
+**The application must not immediately show preloaded messages, fabricated scores, or fictional relationship analytics for new users.**
+
+---
+
+# 3. WEBSITE DESIGN
+
+Create a modern, premium, visually polished website.
+
+## Design language
+
+Use:
+- Dark navy and charcoal backgrounds.
+- Subtle purple, blue, and teal accents.
+- Elegant modern typography.
+- Attractive but restrained gradients.
+- Rounded message bubbles.
+- Clean cards.
+- Consistent spacing.
+- Smooth lightweight transitions.
+- Responsive mobile and desktop interfaces.
+
+The design should feel like an original modern messaging product.
+
+Do not copy WhatsApp's branding or exact interface.
+
+## Public landing page
+
+Display:
+
+**BetweenUs**
+
+Headline:
+
+"Better Conversations Begin With Understanding."
+
+Supporting description:
+
+"A private space to connect, communicate, and understand each other's perspectives."
+
+Buttons:
+- Get Started
+- Sign In
+
+Include a simple explanation of the main features.
+
+Do not show technical implementation details on the homepage.
+
+## IMPORTANT — Do not include academic material in the website
+
+Do not add:
+- Academic Viva.
+- MCA Project Specification.
+- BDA Project Architecture.
+- Project Team Member Cards.
+- Hadoop Mapper Explanation Panels.
+- Mathematical Formula Sections on the homepage.
+- Download Source Code buttons.
+- Download ZIP buttons.
+- College Submission buttons.
+- Academic Presentation navigation.
+- Technical accomplishment badges.
+- Preloaded example conversations on the normal user dashboard.
+
+The website should look like a product.
+
+Academic technical material belongs in the separate project report, README, and PPT.
+
+---
+
+# 4. AUTHENTICATION
+
+Implement genuine account creation and authentication.
+
+## Registration
+
+Fields:
+- Full name.
+- Email.
+- Password.
+- Confirm password.
+
+Requirements:
+- Validate email addresses.
+- Enforce reasonable password strength.
+- Hash passwords securely.
+- Prevent duplicate registrations.
+- Show useful validation errors.
+- Save accounts in a real SQL database.
+
+## Login
+
+Authenticate using:
+- Email.
+- Password.
+
+Use secure session management or JWT authentication.
+
+## Logout
+
+Provide a visible Logout option in the authenticated interface.
+
+Logging out must terminate the application session appropriately.
+
+## User accounts
+
+Each partner must have an independent account.
+
+Partner A and Partner B cannot share an authentication identity.
+
+Do not fabricate successful login responses.
+
+If the backend is unavailable, show a genuine connection error.
+
+---
+
+# 5. PARTNER LINKING
+
+Implement a genuine partner-linking mechanism.
+
+After login, users who are not linked should see:
+
+**Connect With Your Partner**
+
+Provide:
+- Generate invitation.
+- Copy invitation code.
+- Enter invitation code.
+- Accept invitation.
+- View linking status.
+
+After linking, display both partner names.
+
+Only linked users may access their shared conversation.
+
+Prevent:
+- Unauthorized couple access.
+- Joining an existing couple without the required unlinking process.
+- Reuse of expired or revoked invitations.
+- Reading another couple's conversation.
+
+---
+
+# 6. CORE FEATURE — NATURAL TWO-WAY CHAT
+
+This is the most important feature.
+
+Build a fully functioning private chat between two linked users.
+
+## Chat interface
+
+Include:
+- Partner name and avatar.
+- Online status only if genuinely supported.
+- Message bubbles.
+- Timestamps.
+- Message composer.
+- Send button.
+- Enter-to-send.
+- Message history.
+- Auto-scroll.
+- Loading indicators.
+- Network error handling.
+- Responsive layout.
+
+Both users should see exactly the same authorized conversation, with message alignment based on who sent each message.
+
+## Example
+
+Partner A types:
+
+"Why didn't you speak much today? Are you upset about something?"
+
+Partner B types:
+
+"No, nothing like that. I was just busy. Did you take it that way? I'm sorry."
+
+Both users must see those exact messages.
+
+If Partner B instead types:
+
+"Nothing like that. Bye."
+
+That exact reply must appear.
+
+**Never automatically generate a reply on behalf of either partner.**
+
+Do not insert fictional messages into a new conversation.
+
+## Data persistence
+
+Messages must be saved in the SQL database.
+
+Reloading the webpage must not delete message history.
+
+Users should be able to continue their conversation after logging back in.
+
+Use WebSockets if reliably supported.
+
+Otherwise, use authenticated polling with efficient incremental retrieval.
+
+## Additional safeguards
+
+- Prevent empty messages.
+- Limit excessively long messages.
+- Prevent duplicate messages on retries.
+- Validate message ownership.
+- Implement pagination.
+- Protect message content from unauthorized users.
+
+Do not claim end-to-end encryption unless it is actually implemented.
+
+---
+
+# 7. UNIQUE FEATURE — COMMUNICATION INTELLIGENCE
+
+BetweenUs should be different from ordinary chat applications.
+
+Implement an optional, context-aware communication feedback system.
+
+The purpose is to help users recognize how their wording might be received.
+
+**Do not build a simplistic positive-versus-negative classifier that automatically judges every reply.**
+
+Instead, implement restrained, evidence-based communication feedback.
+
+## Example A — Reassuring reply
+
+Partner A:
+
+"Why didn't you speak much today? Are you upset about something?"
+
+Partner B:
+
+"No, nothing like that. I was just busy. Did you take it that way? I'm sorry."
+
+If the sender requests feedback, the system may explain:
+
+"This response includes an explanation and an apology. It may help clarify a misunderstanding."
+
+## Example B — Brief reply
+
+Partner A:
+
+"Why didn't you speak much today? Are you upset about something?"
+
+Partner B:
+
+"Nothing like that. Bye."
+
+If requested, the system may say:
+
+"This response is brief and ends the conversation. Depending on the context, the other person might feel their concern remains unresolved."
+
+It may optionally suggest:
+
+"If you want to continue the conversation later, you could acknowledge the concern and explain when you're available."
+
+## Critical behavioral requirements
+
+- Do not claim Partner B is angry.
+- Do not label either partner toxic.
+- Do not assume someone is intentionally rude.
+- Do not diagnose emotional or psychological conditions.
+- Do not automatically warn Partner A that Partner B behaved badly.
+- Do not infer hidden intentions as facts.
+- Do not present uncertain language classifications as objective truth.
+
+## Feedback design
+
+Implement a discreet **Communication Insight** action.
+
+For example, users can click:
+- Review My Message.
+- Understand This Reply.
+- Reflect on Conversation.
+
+Feedback should open in a private side panel or small expandable section.
+
+It must never interrupt the conversation automatically.
+
+## Sender-first feedback
+
+The sender should optionally be able to review their own message before sending.
+
+Example:
+
+"Nothing like that. Bye."
+
+Private suggestion:
+
+"This message may sound abrupt without additional context. Would you like to clarify that you're busy?"
+
+Buttons:
+- Send Original
+- Edit Message
+- Dismiss
+
+**The user must always remain in control of what gets sent.**
+
+## Recipient perspective
+
+The recipient may independently request a neutral interpretation, but the system must not claim to know the sender's actual feelings.
+
+Do not reveal sender-side drafts or private feedback to the other partner.
+
+## Implementation choice
+
+For the first version, use a transparent, tested text-classification or rule-based communication-cue system.
+
+It should recognize observable features such as:
+- Explanations.
+- Apologies.
+- Acknowledgments.
+- Requests.
+- Brief replies.
+- Abrupt endings.
+- Unresolved questions.
+
+If an existing trained NLP model is available, integrate it only after validating its behavior.
+
+Do not claim that the system uses a large language model unless one is actually integrated.
+
+Do not require Gemini or another paid external AI service for the main functionality.
+
+---
+
+# 8. INDEPENDENT CONVERSATION REFLECTION
+
+Add an optional feature called:
+
+**Reflect Together**
+
+A user can select a conversation or interaction and create a reflection session.
+
+Each partner provides their perspective independently.
+
+## Assessment dimensions
+
+Use scores from 1 to 5 for:
+- Communication.
+- Trust.
+- Support.
+- Conflict resolution.
+
+Each partner can also optionally write a private note.
+
+## Workflow
+
+1. One partner starts a reflection.
+2. The system creates a shared interaction reference.
+3. Both partners are invited to submit their own assessments.
+4. Each assessment is stored independently.
+5. The system displays assessment completion status.
+6. Paired comparisons are only revealed according to consent rules.
+7. Perspective Gap Score is calculated when the required valid data exists.
+
+## Privacy
+
+Individual assessments must remain private by default.
+
+Do not display Partner A's scores to Partner B without the required permission.
+
+Do not automatically derive numerical ratings from message text.
+
+Do not make assessments mandatory after every conversation.
+
+---
+
+# 9. PERSPECTIVE GAP SCORE
+
+Implement the existing Perspective Gap Score algorithm.
+
+For four dimension scores:
+
+PGS = [(A1−B1)² + (A2−B2)² + (A3−B3)² + (A4−B4)²] / 4
+
+Where:
+- A represents Partner A.
+- B represents Partner B.
+- The four dimensions are communication, trust, support, and conflict resolution.
+
+The score range is 0 to 16.
+
+## Interpretation
+
+- PGS = 0 means identical submitted ratings.
+- A larger PGS indicates greater differences in reported perspectives.
+
+Do not claim low PGS automatically indicates a healthy relationship.
+
+Do not claim high PGS automatically indicates an unhealthy relationship.
+
+Implement reliable pairing by interaction ID and couple ID.
+
+For batch data without unique interaction IDs, document the date-based pairing rules.
+
+Handle missing and duplicate assessments.
+
+Display:
+- Overall PGS.
+- Dimension-wise differences.
+- Trends over time.
+- Pending assessment states.
+
+Do not display PGS before two valid assessments exist.
+
+---
+
+# 10. AUTHENTICATED APPLICATION PAGES
+
+Create the following user-facing pages.
+
+## Dashboard
+
+Show:
+- Partner connection status.
+- Recent chats.
+- Pending reflections.
+- Recent interaction history.
+- Personal reflection activity.
+- Available perspective trends.
+
+Display empty states for new accounts.
+
+Do not invent statistics.
+
+## Messages
+
+Primary chat interface.
+
+## Partner
+
+Invitation and linking management.
+
+## Reflections
+
+Private assessment and shared reflection workflows.
+
+## Insights
+
+Communication feedback and authorized perspective analytics.
+
+## History
+
+Past conversations and completed reflection sessions.
+
+## Settings
+
+Profile information, password management, privacy controls, and logout.
+
+## Navigation
+
+Use a clean product-oriented navigation:
+
+**Home | Messages | Partner | Reflections | Insights | History | Settings**
+
+Do not place Hadoop, ML, developer tools, or academic material in the primary public navigation.
+
+Those technical components should have a separate restricted developer/analytics view for demonstration and administration.
+
+---
+
+# 11. SQL DATABASE
+
+Use a genuine relational database.
+
+Preferred implementation:
+- PostgreSQL for deployment, when available.
+- SQLite for local development and straightforward college demonstration.
+
+Use SQLAlchemy or an equivalent ORM if using Flask.
+
+Required database entities:
+
+## Users
+- ID.
+- Full name.
+- Email.
+- Password hash.
+- Created timestamp.
+
+## Couples
+- ID.
+- Partner A ID.
+- Partner B ID.
+- Linking status.
+- Created timestamp.
+
+## Invitations
+- ID.
+- Inviting user ID.
+- Invitation code hash.
+- Expiration.
+- Status.
+
+## Messages
+- ID.
+- Couple ID.
+- Sender ID.
+- Text.
+- Created timestamp.
+- Idempotency key where needed.
+
+## Interactions
+- ID.
+- Couple ID.
+- Message-range reference or interaction metadata.
+- Created timestamp.
+
+## Assessments
+- ID.
+- Interaction ID.
+- User ID.
+- Four ratings.
+- Private reflection.
+- Consent status.
+- Created timestamp.
+
+## Communication Feedback
+- ID.
+- User ID.
+- Message ID or interaction ID.
+- Feedback text.
+- Analysis source.
+- Created timestamp.
+
+## Analytics
+- ID.
+- Interaction ID or aggregate reference.
+- Processing source.
+- PGS and aggregate metadata.
+- Created timestamp.
+
+Apply appropriate database constraints and indexes.
+
+Do not store plaintext passwords.
+
+Use migrations rather than destructive schema changes.
+
+---
+
+# 12. BACKEND API
+
+Preferred backend:
+
+**Python Flask REST API**
+
+Use:
+- Flask.
+- SQLAlchemy.
+- JWT authentication.
+- Flask-CORS.
+- Input validation.
+- Environment variables.
+
+Implement protected endpoints for:
+
+### Authentication
+- Register.
+- Login.
+- Logout or session invalidation.
+- Profile.
+
+### Partners
+- Create invitation.
+- Accept invitation.
+- Retrieve partner status.
+- Unlink with appropriate safeguards.
+
+### Messages
+- Send message.
+- Fetch authorized messages.
+- Retrieve new messages.
+- Fetch conversation history.
+
+### Reflections
+- Create interaction.
+- Submit assessment.
+- Retrieve own assessment.
+- Retrieve completion status.
+- Retrieve consent-authorized PGS.
+
+### Communication Intelligence
+- Review message.
+- Analyze an authorized reply on request.
+- Generate cautious communication feedback.
+- Store or discard private feedback according to user choice.
+
+### Analytics
+- Retrieve personal and shared trends.
+- Retrieve historical PGS.
+- Retrieve validated batch summaries.
+
+All routes must have appropriate authentication, authorization, and validation.
+
+Do not silently fall back to fake backend data.
+
+---
+
+# 13. SYNTHETIC DATASET — APPROXIMATELY 1 GB
+
+This project uses an existing approximately **1 GB synthetic relationship interaction dataset**.
+
+The dataset was prepared separately.
+
+Do not replace it with the previously mentioned 150 MB dataset.
+
+Do not assume the source file is available unless it is actually uploaded or accessible.
+
+## Dataset workflow
+
+1. Accept the existing file.
+2. Validate actual file size and schema.
+3. Inspect row count and required fields.
+4. Identify malformed records.
+5. Validate partner and couple IDs.
+6. Validate interaction dates.
+7. Check duplicate records.
+8. Check score ranges.
+9. Normalize field names through a documented mapping.
+10. Generate clean Hadoop-compatible output.
+11. Preserve original data.
+12. Record accurate validation statistics.
+
+Use chunked processing where appropriate.
+
+Avoid loading the entire 1 GB dataset into memory unnecessarily.
+
+Use a small validated sample for the live demonstration.
+
+Never claim the complete dataset was processed without genuine execution evidence.
+
+The dataset contains synthetic academic records, not real relationship conversations.
+
+Do not combine private live chats into the synthetic dataset automatically.
+
+---
+
+# 14. BIG DATA ARCHITECTURE
+
+Implement a Lambda Architecture.
+
+## Speed Layer
+
+Handles:
+- Live messages.
+- User assessments.
+- Reflection status.
+- Immediate authorized PGS calculations.
+- Recent trends.
+
+## Batch Layer
+
+Handles:
+- The 1 GB synthetic dataset.
+- Hadoop HDFS.
+- MapReduce.
+- Partner-record grouping.
+- Batch PGS calculations.
+- Aggregate trends.
+- Feature generation for ML.
+
+## Serving Layer
+
+Handles:
+- Analytics APIs.
+- Batch result storage.
+- Dashboard queries.
+- ML inference.
+- Historical summaries.
+
+Maintain separation between actual users and synthetic batch records.
+
+---
+
+# 15. HADOOP MAPREDUCE
+
+Implement genuine Hadoop-compatible processing.
+
+Required scripts:
+- validate_dataset.py
+- prepare_dataset.py
+- mapper.py
+- reducer.py
+- export_to_hdfs.py
+- run_hadoop.sh
+- import_results.py
+
+## Mapper
+
+Parse records and emit normalized keys based on couple and interaction or date.
+
+## Reducer
+
+Join the appropriate partner records.
+
+Calculate dimension gaps and PGS.
+
+Generate aggregates and record counts.
+
+Handle invalid and incomplete records.
+
+## Outputs
+
+- Valid paired assessment count.
+- Skipped or malformed count.
+- Average PGS.
+- Dimension-level aggregates.
+- Historical trend summaries.
+- Batch run metadata.
+
+Implement actual Hadoop Streaming command instructions.
+
+Provide a local fixture test mode as well.
+
+**Do not call local simulation a successful Hadoop cluster run.**
+
+---
+
+# 16. MACHINE LEARNING
+
+Implement a reproducible machine learning pipeline using the synthetic data.
+
+## Objective
+
+Predict a clearly defined future synthetic perspective-discrepancy category using available historical features.
+
+Do not present this as a reliable prediction of real-world relationship success.
+
+## Models
+
+Compare:
+- Logistic Regression.
+- Decision Tree.
+- Random Forest.
+
+## Evaluation
+
+Use:
+- Accuracy.
+- Precision.
+- Recall.
+- F1-score.
+- Confusion matrix.
+
+Avoid train/test leakage between the same couples and avoid target leakage.
+
+Report actual metrics only.
+
+Save the trained model and preprocessing steps.
+
+Implement an inference endpoint.
+
+Keep predictive analytics separate from communication-cue feedback.
+
+---
+
+# 17. COMMUNICATION INTELLIGENCE VERSUS ML PREDICTION
+
+These are two different features.
+
+## Communication Intelligence
+
+Works on individual messages when a user requests feedback.
+
+Focuses on possible conversational misunderstandings and observable wording.
+
+Does not claim to know hidden emotions.
+
+## ML Prediction
+
+Works on structured historical synthetic data.
+
+Predicts a defined discrepancy category.
+
+Do not use the synthetic ML model to claim that a live chat message proves a partner is angry or upset.
+
+---
+
+# 18. FIVE-MEMBER TEAM ORGANIZATION
+
+This is a **five-member project**.
+
+Organize development and documentation around five responsibilities.
+
+### Member 1 — Team Leader / Main Developer
+
+- Overall architecture.
+- Perspective Gap Score.
+- Hadoop MapReduce.
+- ML implementation.
+- Final integration.
+- Technical demonstration.
+
+### Member 2 — Backend Developer
+
+- Flask APIs.
+- Authentication.
+- Database.
+- Partner linking.
+- Message persistence.
+- Assessment APIs.
+- Authorization.
+
+### Member 3 — Frontend Developer
+
+- Product design.
+- Chat interface.
+- Dashboard.
+- Registration and login.
+- Partner linking screens.
+- Reflections.
+- Insights.
+- Responsive UI.
+
+### Member 4 — Data Engineering
+
+- 1 GB dataset validation.
+- Data preprocessing.
+- HDFS upload.
+- Batch pipeline.
+- Hadoop execution scripts.
+- Results import.
+
+### Member 5 — Testing and Documentation
+
+- Functional testing.
+- Integration testing.
+- Security test cases.
+- Demo verification.
+- Project documentation.
+- Presentation support.
+
+These are project contribution areas. Do not claim an individual completed a component without actual team confirmation.
+
+Do not display the five team roles prominently on the public consumer website.
+
+Include them in separate academic documentation.
+
+---
+
+# 19. DUAL-PARTNER DEMONSTRATION MODE
+
+For college evaluation, create a safe demonstration mode.
+
+Use:
+- Fictional Partner A.
+- Fictional Partner B.
+- Separate authorized demo identities.
+- An isolated demonstration database or records.
+
+The demo must allow both sides of the conversation to be shown on one laptop.
+
+## Required behavior
+
+- Start a new demo with no preloaded messages.
+- Type freely as Partner A.
+- See the message on Partner B's side.
+- Type a reply as Partner B.
+- See the reply on Partner A's side.
+- Continue messaging.
+- Optionally review a message for communication clarity.
+- Create a reflection.
+- Submit separate ratings.
+- Calculate PGS only after both valid submissions.
+
+No fabricated message exchanges.
+
+No automatic partner replies.
+
+No pre-generated PGS values.
+
+No mock successful authentication pretending to be real.
+
+The demo must remain isolated from real users.
+
+Do not show academic demo controls on the public landing page.
+
+---
+
+# 20. SECURITY AND PRIVACY
+
+Implement:
+- Secure password hashing.
+- SQL query safety.
+- Authentication.
+- Couple-level authorization.
+- Input validation.
+- CSRF protection where applicable to session-based authentication.
+- Safe API error handling.
+- Environment-based secrets.
+- Secure data storage practices.
+- Consent-aware analytics.
+- Rate limiting where feasible.
+
+Do not send personal conversations to external AI providers.
+
+Make communication feedback optional and private.
+
+Do not expose one partner's private notes or drafts to the other partner.
+
+Do not claim professional counseling capabilities.
+
+Do not claim end-to-end encryption without implementing it.
+
+---
+
+# 21. TESTING
+
+Create automated tests where possible.
+
+## Essential tests
+
+1. Registration creates a database record.
+2. Login validates actual credentials.
+3. Logout ends the authenticated session appropriately.
+4. Invitation generation works.
+5. Partner linking works.
+6. An unlinked user cannot read private messages.
+7. Partner A can send a message.
+8. Partner B receives the same message.
+9. Partner B can reply.
+10. Partner A receives the reply.
+11. Messages persist after refresh.
+12. Unauthorized users cannot access another couple.
+13. Communication feedback works only when requested.
+14. Original messages are not changed automatically.
+15. Both partners can submit independent assessments.
+16. PGS is calculated correctly.
+17. Incomplete paired assessments do not create PGS.
+18. Dashboard uses real authorized data.
+19. Hadoop mapper and reducer process validated fixtures.
+20. ML training and inference work.
+21. Frontend builds successfully.
+22. Backend APIs pass integration tests.
+
+Document all executed tests.
+
+Do not invent test outcomes.
+
+---
+
+# 22. DEMONSTRATION FLOW
+
+Prepare a smooth demonstration.
+
+### Step 1 — Open BetweenUs
+
+Show the landing page.
+
+### Step 2 — Account creation
+
+Create two fictional users.
+
+### Step 3 — Connect partners
+
+Generate and accept an invitation.
+
+### Step 4 — Start conversation
+
+Partner A sends:
+
+"Why didn't you speak much today? Are you upset about something?"
+
+Partner B replies:
+
+"Nothing like that. I was just busy. Did you take it that way? I'm sorry."
+
+### Step 5 — Show alternative wording
+
+In a separate demonstration message, Partner B types:
+
+"Nothing like that. Bye."
+
+Open the optional communication feedback feature.
+
+Show that BetweenUs explains how the wording *might* be interpreted without asserting that the partner is angry or uncaring.
+
+### Step 6 — Continue conversation
+
+Demonstrate that the user can edit or send their original wording.
+
+### Step 7 — Reflect
+
+Create a reflection session.
+
+Both users independently provide their four ratings.
+
+### Step 8 — PGS
+
+Show the calculated difference between the ratings.
+
+### Step 9 — Analytics
+
+Display genuine available historical results.
+
+### Step 10 — Big Data
+
+Demonstrate the Hadoop pipeline or clearly distinguish a local execution preview from real Hadoop processing.
+
+### Step 11 — Machine Learning
+
+Show genuine evaluated synthetic-data predictions when available.
+
+---
+
+# 23. PROJECT DOCUMENTATION
+
+Generate separate academic deliverables without putting academic content into the consumer website.
+
+Required:
+
+- README.md.
+- Architecture documentation.
+- Database schema.
+- API documentation.
+- Hadoop workflow documentation.
+- Dataset validation summary.
+- ML methodology.
+- Model evaluation summary.
+- Testing results.
+- Demo guide.
+- Team contribution outline.
+- Project report content.
+- PPT content.
+- Viva questions and answers.
+
+Include verifiable diagrams and actual screenshots when available.
+
+Use the new project name **BetweenUs** consistently.
+
+---
+
+# 24. REQUIRED SOURCE STRUCTURE
+
+Prefer:
+
+```text
+BetweenUs/
+├── frontend/
+├── backend/
+├── database/
+├── data/
+├── hadoop/
+├── ml/
+├── tests/
+├── docs/
+├── scripts/
+├── README.md
+└── .gitignore
+```
+
+Use a maintainable modular structure.
+
+Exclude:
+- API secrets.
+- Passwords.
+- Private production data.
+- The full 1 GB dataset from Git.
+- Virtual environments.
+- node_modules.
+
+Provide dependency manifests and environment templates.
+
+---
+
+# 25. DEVELOPMENT PRIORITY
+
+Complete in this order:
+
+1. Website structure.
+2. User registration and login.
+3. Partner linking.
+4. Actual two-way text chat.
+5. SQL message persistence.
+6. Private communication feedback.
+7. Reflection workflow.
+8. Perspective Gap Score.
+9. User analytics dashboard.
+10. Dataset validation.
+11. Hadoop pipeline.
+12. ML training and inference.
+13. Five-member documentation.
+14. Comprehensive testing.
+15. Final demonstration package.
+
+Do not spend excessive time on visual animations before core functionality works.
+
+---
+
+# 26. GOOGLE AI STUDIO / ANTIGRAVITY EXECUTION REQUIREMENTS
+
+If running in Google AI Studio:
+
+- Use the capabilities actually available in the environment.
+- Generate executable source files rather than only a mock browser preview.
+- Do not silently replace Flask, SQL, Hadoop, or ML with browser-only simulations.
+- If local services cannot run, produce the files needed to execute them on Windows.
+- Provide a downloadable source bundle when supported.
+- Report honestly what was and was not executed.
+
+If running in Antigravity:
+
+- Inspect the current workspace.
+- Create the new project without overwriting the existing RelateIQ project.
+- Install dependencies only as necessary.
+- Run actual backend and frontend tests.
+- Use appropriate local configurations.
+- Preserve backups.
+- Report execution evidence.
+
+The new BetweenUs project must be kept separate from the older RelateIQ version until it has passed validation.
+
+---
+
+# 27. FINAL ACCEPTANCE CRITERIA
+
+The project should be considered ready only after the following have been verified:
+
+- Two users can register.
+- Two users can log in independently.
+- Both accounts can link.
+- Both can send and receive messages.
+- Conversations persist.
+- Communication feedback is optional.
+- Feedback does not falsely claim to know hidden emotions.
+- Individual assessments remain independent.
+- PGS is calculated correctly.
+- Analytics only display available data.
+- SQL backend works.
+- Hadoop scripts are runnable and tested.
+- The 1 GB dataset is integrated when actually available.
+- ML models are evaluated.
+- Demo mode is isolated and functional.
+- The public website looks like a genuine communication product.
+- Five-member documentation is prepared.
+- All actual test results are recorded.
+
+Do not claim complete functionality until real integration tests confirm it.
+
+---
+
+# FINAL COMMAND
+
+Build **BetweenUs — An Intelligent Communication and Relationship Analytics Platform**.
+
+Prioritize a fully functional two-partner messaging system with private, optional communication feedback.
+
+The application must have real registration, sign-in, logout, partner linking, two-way messaging, SQL persistence, assessments, perspective-gap analytics, and separate Hadoop and ML components.
+
+The user-facing website must be simple, natural, modern, and free from academic presentation content.
+
+Preserve the 1 GB synthetic dataset requirement and five-member project structure.
+
+Implement the code, test supported functionality, provide exact startup instructions, and produce a working demonstration package.
+
+Do not substitute simulated behavior for real backend functionality without explicitly labeling it.
+
+**I want an actual working communication application, not another static dashboard filled with fictional messages and scores.**

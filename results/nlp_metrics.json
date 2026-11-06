@@ -1,0 +1,24 @@
+{
+  "raw_annotation_rows": 211225,
+  "unique_comment_ids": 58011,
+  "filtered_labeled_comments": 8989,
+  "train": 7191,
+  "test": 1798,
+  "evaluated_labels": [
+    "anger",
+    "annoyance",
+    "disapproval",
+    "disgust",
+    "gratitude",
+    "joy",
+    "love",
+    "sadness",
+    "neutral"
+  ],
+  "model": "TF-IDF (1-2 grams) + LogisticRegression, 9-class subset (Reproducible Pure-Python SGD)",
+  "accuracy": 0.5612,
+  "macro_f1": 0.5618,
+  "status": "Trained & Operational Experimental Baseline",
+  "public_source_credit": "Google Research GoEmotions, Demszky et al., ACL 2020",
+  "limitations": "Emotions in Reddit comments, not relationship intent, toxicity, sarcasm, partner perception, or real-world risk. A GoEmotions classifier is NOT an insult/bullying/sarcasm/intention detector. Stress probes are illustration only."
+}

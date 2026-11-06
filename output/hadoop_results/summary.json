@@ -1,0 +1,1 @@
+{"total_couples_processed": 50, "total_paired_interactions": 500, "total_incomplete_interactions": 0, "overall_mean_pgs": 0.5968, "pgs_formula": "mean of four squared assessment differences: [(c1-c2)^2 + (t1-t2)^2 + (s1-s2)^2 + (cf1-cf2)^2] / 4.0", "interaction_type_breakdown": [{"type": "General", "count": 500, "mean_pgs": 0.5968}]}

@@ -1,0 +1,2 @@
+No structured ML accuracy reported. A target created from PGS and predicted using its four component differences would be target leakage. Choose an independent outcome (e.g. future Satisfaction_Score) with careful temporal validation before training a meaningful structured model.
+Status: PENDING VALIDATION (Avoid Target Leakage)

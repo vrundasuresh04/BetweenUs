@@ -1,0 +1,37 @@
+{
+  "input_rows": 1129814,
+  "paired_interactions": 564907,
+  "incomplete_groups": 0,
+  "malformed_or_duplicate_rows": 0,
+  "mean_pgs": 1.5311,
+  "pgs_formula": "mean of four squared P1 minus P2 assessment differences (0 to 16)",
+  "mapreduce_mode": "Python mapper/shuffle/reducer simulation, NOT an executed Hadoop cluster",
+  "dataset_source": "relationship_patterns_150MB_compressed (5).zip (synthetic relationship interaction dataset, ~150 MiB uncompressed)",
+  "interaction_types": [
+    {
+      "type": "Conflict_Discussion",
+      "count": 142100,
+      "mean_pgs": 2.1842
+    },
+    {
+      "type": "Financial_Planning",
+      "count": 115240,
+      "mean_pgs": 1.7429
+    },
+    {
+      "type": "Daily_Logistics",
+      "count": 138400,
+      "mean_pgs": 1.1215
+    },
+    {
+      "type": "Emotional_Checkin",
+      "count": 98500,
+      "mean_pgs": 1.341
+    },
+    {
+      "type": "Leisure_Planning",
+      "count": 70667,
+      "mean_pgs": 0.9856
+    }
+  ]
+}

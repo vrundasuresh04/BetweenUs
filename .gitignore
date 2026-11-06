@@ -1,0 +1,41 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+.aistudio/
+.aistudio/
+baseline_ca3/relationship_patterns_150MB_synthetic.csv.csv
+data/relationship_patterns_150MB.csv
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+coverage/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# AI Studio temporary files
+.aistudio/
+
+# Large datasets
+*150MB*.csv*
+data/relationship_patterns_150MB.csv
+baseline_ca3/relationship_patterns_150MB_synthetic.csv.csv
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+database/*.db*

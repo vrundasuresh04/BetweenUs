@@ -1,0 +1,7 @@
+{
+  "name": "BetweenUs",
+  "description": "An Intelligent Communication and Relationship Analytics Platform for connected partners to understand differing perspectives.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

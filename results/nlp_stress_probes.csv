@@ -1,0 +1,11 @@
+text,predicted_goemotions_label,model_probability,note
+"""You are such an idiot.""",annoyance,0.7079,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""That was really helpful, thanks!""",gratitude,1.0,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""Sure, whatever you say.""",neutral,0.3807,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""I am proud of you.""",joy,0.9518,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""Stop messaging me.""",anger,0.9679,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""Yeah right, brilliant idea genius.""",joy,0.3656,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""You always ruin everything.""",anger,0.9485,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""Haha you idiot, I missed you!""",anger,0.5678,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""Could you please explain that again?""",sadness,0.2598,Unvalidated stress-test example: not a bullying/sarcasm detection result
+"""I am upset about what happened.""",sadness,0.749,Unvalidated stress-test example: not a bullying/sarcasm detection result
